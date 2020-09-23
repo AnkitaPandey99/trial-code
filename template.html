@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+      .header {
+        height: 130px;
+        width: 100%;
+        background-color: lightgrey;
+        line-height: 70px;
+        /* position: fixed; */
+      }
+
+      h1 {
+        margin-left: 5%;
+        display: inline-block;
+        width: 30%;
+        vertical-align: top;
+        font-size: 50px;
+      }
+
+      .search {
+        height: 70px;
+        width: 60%;
+        /* background-color: red; */
+        display: inline-block;
+      }
+
+      .search input {
+        height: 40px;
+        width: 100%;
+        text-indent: 20px;
+        border-radius: 5px;
+        border: 1px solid gray;
+        outline: none;
+      }
+
+      .products {
+        width: 100%;
+        height: auto;
+        /* background-color: gray; */
+      }
+
+      .productwrapper {
+        height: auto;
+        width: 80%;
+        /* background-color: green; */
+        margin-left: 10%;
+        margin-bottom: 50px;
+      }
+
+      .product {
+        height: auto;
+        width: 25%;
+        /* background-color: red; */
+        display: inline-block;
+        margin-top: 25px;
+        margin-left: 6.25%;
+        border: 1px solid lightgray;
+      }
+
+      .prodimg {
+        height: 300px;
+        width: 100%;
+        /* background-color: yellow; */
+        overflow: hidden;
+      }
+
+      .product h3,
+      .product p {
+        padding: 5px;
+        padding-left: 10px;
+      }
+
+      .product p {
+        color: gray;
+      }
+      button {
+        padding: 10px;
+        background-color: rgb(129, 123, 123);
+      }
+      .price{
+        height: 50px;
+        width: 60%;
+        /* display: inline-block; */
+        text-align: right;
+        /* background-color: red; */
+        padding-bottom: 10px;
+        padding-right: 60px;
+        margin-left: 60px;
+        margin-right: 20px;
+        float: right;
+      }
+      .price input{
+        height: 30px;
+        width: 25%;
+        text-indent: 20px;
+        border-radius: 5px;
+        border: 1px solid gray;
+        outline: none;
+        padding-right: 40px;
+        padding-top: 10px;
+        /* margin-bottom: 40px; */
+        /* background-color: lawngreen; */
+      }
+      .price button{
+        border-radius: 5px;
+        padding-top: 15px;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Shopping 360</h1>
+        <div class="search">
+          <input
+          type="search"
+          onkeyup="searchProduct(this.value)"
+          placeholder="Search For Products"
+         />
+        </div>
+
+        <div class="price">
+        
+           <input type="number" placeholder="minimum price" id="minprice">
+           <input type="number" placeholder="maximum price" id=maxprice>
+           <button onclick="priceRangeProducts()">Search</button>
+                
+        </div>
+    </div> 
+      
+    <div class="products">
+      <div class="productwrapper" id="productwrapper"></div>
+    </div>
+
+    <div class="products">
+      <h1>Cart</h1>
+      <div class="productwrapper" id="cart"></div>
+    </div>
+
+    <script src="template.js"></script>
+  </body>
+</html>
